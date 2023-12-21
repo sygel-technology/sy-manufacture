@@ -24,7 +24,7 @@ To configure this module, you need to:
 
 #. Go to MRP / Products / Bills of materials.
 
-#.  On the bill form, go to the Waning section and configure the warning message
+#. On the bill form, go to the Waning section and configure the warning message
 
 
 Usage
@@ -32,7 +32,9 @@ Usage
 
 To use this module, you need to:
 
-#. No usage instructions
+#. Create a manufacturing order with a bill of materials that has a configured warning
+#. You will see a warning on the form header if the order is not done or cancelled
+#. If you manually create the order, you will also see a warning popup
 
 
 ROADMAP

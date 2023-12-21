@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2023 Alberto Martínez <alberto.martinez@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="mrp_bom_form_view_warn_inherit" model="ir.ui.view">
+        <field name="name">mrp.bom.form.warn.inherit</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="warning" string="Warning">
+                    <group colspan="2" col="2">
+                        <field name="production_warn" nolabel="1" readonly="True"/>
+                        <field name="production_warn_msg" colspan="3" nolabel="1" readonly="True" attrs="{'required':[('production_warn','=','warning')], 'invisible':[('production_warn','in',(False,'no-message'))]}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_bom_form_view_edit_warn_inherit" model="ir.ui.view">
+        <field name="name">mrp.bom.form.edit.warn.inherit</field>
+        <field name="model">mrp.bom</field>
+        <field name="groups_id" eval="[(4, ref('mrp_bom_warn_message.group_warning_mrp_bom'))]" />
+        <field name="inherit_id" ref="mrp_bom_warn_message.mrp_bom_form_view_warn_inherit"/>
+        <field name="arch" type="xml">
+            <field name="production_warn" position="attributes">
+                <attribute name="readonly">False</attribute>
+            </field>
+            <field name="production_warn_msg" position="attributes">
+                <attribute name="readonly">False</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

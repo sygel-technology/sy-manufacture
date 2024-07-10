@@ -6,14 +6,11 @@
     "summary": "Picking Very High Priority MRP",
     "version": "15.0.1.0.0",
     "category": "Custom",
-    "website": "https://www.sygel.es",
+    "website": "https://github.com/sygel-technology/sy-manufacturing",
     "author": "Sygel, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "auto_install": True,
-    "depends": [
-        'picking_very_high_priority',
-        'mrp'
-    ],
+    "depends": ["picking_very_high_priority", "mrp"],
 }

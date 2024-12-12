@@ -1,13 +1,13 @@
 
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
-[![Pre-commit Status](https://github.com/sygel-technology/sy-manufacturing/actions/workflows/pre-commit.yml/badge.svg?branch=15.0)](https://github.com/sygel-technology/sy-manufacturing/actions/workflows/pre-commit.yml?query=branch%3A15.0)
-[![Build Status](https://github.com/sygel-technology/sy-manufacturing/actions/workflows/test.yml/badge.svg?branch=15.0)](https://github.com/sygel-technology/sy-manufacturing/actions/workflows/test.yml?query=branch%3A15.0)
-[![codecov](https://codecov.io/gh/sygel-technology/sy-manufacturing/branch/15.0/graph/badge.svg)](https://codecov.io/gh/sygel-technology/sy-manufacturing)
+[![Pre-commit Status](https://github.com/sygel-technology/sy-manufacture/actions/workflows/pre-commit.yml/badge.svg?branch=15.0)](https://github.com/sygel-technology/sy-manufacture/actions/workflows/pre-commit.yml?query=branch%3A15.0)
+[![Build Status](https://github.com/sygel-technology/sy-manufacture/actions/workflows/test.yml/badge.svg?branch=15.0)](https://github.com/sygel-technology/sy-manufacture/actions/workflows/test.yml?query=branch%3A15.0)
+[![codecov](https://codecov.io/gh/sygel-technology/sy-manufacture/branch/15.0/graph/badge.svg)](https://codecov.io/gh/sygel-technology/sy-manufacture)
 <!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
 
-# sy-manufacturing
+# sy-manufacture
 
 Odoo Manufacturing
 

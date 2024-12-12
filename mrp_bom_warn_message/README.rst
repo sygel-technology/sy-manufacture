@@ -1,6 +1,6 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-	:target: http://www.gnu.org/licenses/agpl
-	:alt: License: AGPL-3
+    :target: http://www.gnu.org/licenses/agpl
+    :alt: License: AGPL-3
 
 ====================
 MRP BOM Warn Message
@@ -39,8 +39,6 @@ To use this module, you need to:
 
 ROADMAP
 =======
-
-* ...
 
 
 Bug Tracker

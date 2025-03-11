@@ -16,6 +16,13 @@ Odoo Manufacturing
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[quality_control_wait_approval](quality_control_wait_approval/) | 17.0.1.0.0 |  | Always pass through the 'Waiting supervisor approval' in Inspections
+
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->

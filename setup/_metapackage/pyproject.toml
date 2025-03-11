@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-sygel-technology-sy-manufacture"
+version = "17.0.20250311.0"
+dependencies = [
+    "odoo-addon-quality_control_wait_approval>=17.0dev,<17.1dev",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 17.0",
+]

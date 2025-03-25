@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Ángel Rivas <angel.rivas@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record
+        id="mrp_production_category_notes_product_category_form_view"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >mrp.production.category.notes.product.category.form.view</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <field name="mrp_notes" widget="html" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

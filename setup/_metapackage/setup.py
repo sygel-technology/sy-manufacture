@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-mrp_bom_warn_message>=15.0dev,<15.1dev',
+        'odoo-addon-mrp_production_category_notes>=15.0dev,<15.1dev',
         'odoo-addon-picking_very_high_priority_mrp>=15.0dev,<15.1dev',
     ],
     classifiers=[

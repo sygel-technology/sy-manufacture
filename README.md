@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [mrp_bom_warn_message](mrp_bom_warn_message/) | 15.0.1.0.0 |  | Add a configurable warning when a bill of materials is selected on a MRP manufacturing order.
+[mrp_production_category_notes](mrp_production_category_notes/) | 15.0.1.0.0 |  | This module adds a new field to product categories that allows adding notes to mrp orders.
 [picking_very_high_priority_mrp](picking_very_high_priority_mrp/) | 15.0.1.0.0 |  | Picking Very High Priority MRP
 
 [//]: # (end addons)

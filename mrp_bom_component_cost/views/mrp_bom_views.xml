@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Alberto Martínez <alberto.martinez@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="mrp_bom_form_view_costs" model="ir.ui.view">
+        <field name="name">mrp.bom.form.costs</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='bom_line_ids']/tree/field[@name='product_uom_id']"
+                position="before"
+            >
+                <field name="currency_id" column_invisible="1" />
+                <field
+                    name="cost_unit"
+                    widget="monetary"
+                    groups="mrp_bom_component_cost.mrp_bom_costs"
+                />
+                <field
+                    name="cost_subtotal"
+                    widget="monetary"
+                    groups="mrp_bom_component_cost.mrp_bom_costs"
+                />
+            </xpath>
+            <xpath expr="//field[@name='bom_line_ids']" position="after">
+                <group
+                    name="note_group"
+                    col="6"
+                    class="mt-2 mt-md-0"
+                    groups="mrp_bom_component_cost.mrp_bom_costs"
+                >
+                    <group class="oe_subtotal_footer" colspan="2">
+                        <field name="currency_id" invisible="1" />
+                        <field name="cost_subtotal" widget="monetary" colspan="2" />
+                    </group>
+                    <div class="clearfix" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

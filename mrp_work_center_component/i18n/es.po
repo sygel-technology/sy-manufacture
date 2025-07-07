@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_work_center_components
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-07 08:23+0000\n"
+"PO-Revision-Date: 2025-07-07 10:25+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter__component_line_ids
+#: model_terms:ir.ui.view,arch_db:mrp_work_center_components.view_mrp_workcenter_form_inherit_components
+msgid "Components"
+msgstr "Componentes"
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__id
+msgid "ID"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: mrp_work_center_components
+#: model:ir.model,name:mrp_work_center_components.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de producción"
+
+#. module: mrp_work_center_components
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: mrp_work_center_components
+#: model:ir.model,name:mrp_work_center_components.model_mrp_workcenter
+#: model:ir.model.fields,field_description:mrp_work_center_components.field_mrp_workcenter_component__work_center_id
+msgid "Work Center"
+msgstr "Centro de trabajo"
+
+#. module: mrp_work_center_components
+#: model:ir.model,name:mrp_work_center_components.model_mrp_workcenter_component
+msgid "mrp.workcenter.component"
+msgstr ""

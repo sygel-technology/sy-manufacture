@@ -18,5 +18,6 @@
     "data": [
         "security/ir.model.access.csv",
         "views/mrp_workcenter_views.xml",
+        "views/mrp_production_views.xml",
     ],
 }

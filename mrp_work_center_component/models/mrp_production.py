@@ -13,53 +13,39 @@ class MrpProduction(models.Model):
         productions._add_workcenter_components()
         return productions
 
-    def write(self, vals):
-        res = super().write(vals)
-        if "workorder_ids" in vals or "some_workcenter_field" in vals:
-            self._update_workcenter_components()
-        return res
-
-    def _update_workcenter_components(self):
-        for production in self:
-            old_moves = self.env["stock.move"].search(
-                [
-                    ("raw_material_production_id", "=", production.id),
-                    ("additional", "=", True),
-                ]
-            )
-            old_moves.unlink()
-            production._add_workcenter_components()
-
-    def _add_workcenter_components(self):
+    def _add_workcenter_components(self, workcenter_id=None):
         StockMove = self.env["stock.move"]
-        WorkcenterComponent = self.env["mrp.workcenter.component"]
 
         for production in self:
-            components = WorkcenterComponent.search(
-                [
-                    (
-                        "work_center_id",
-                        "in",
-                        production.workorder_ids.mapped("workcenter_id").ids,
-                    )
-                ]
-            )
-            move_vals = []
-            for component in components:
-                move_vals.append(
-                    {
-                        "name": component.product_id.display_name,
-                        "product_id": component.product_id.id,
-                        "product_uom_qty": component.quantity,
-                        "product_uom": component.product_id.uom_id.id,
-                        "location_id": production.location_src_id.id,
-                        "location_dest_id": production.production_location_id.id,
-                        "raw_material_production_id": production.id,
-                        "company_id": production.company_id.id,
-                        "picking_type_id": production.picking_type_id.id,
-                        "state": "draft",
-                        "additional": True,
-                    }
+            if workcenter_id:
+                components = (
+                    self.env["mrp.workcenter"].browse(workcenter_id).component_line_ids
                 )
+            else:
+                components = production.workorder_ids.mapped(
+                    "workcenter_id.component_line_ids"
+                )
+
+            move_vals = [
+                production._prepare_workcenter_component_move_vals(
+                    component, additional=not workcenter_id
+                )
+                for component in components
+            ]
             if move_vals:
                 StockMove.create(move_vals)
+
+    def _prepare_workcenter_component_move_vals(self, component, additional=False):
+        return {
+            "name": component.product_id.display_name,
+            "product_id": component.product_id.id,
+            "product_uom_qty": component.quantity,
+            "product_uom": component.product_id.uom_id.id,
+            "location_id": self.location_src_id.id,
+            "location_dest_id": self.production_location_id.id,
+            "raw_material_production_id": self.id,
+            "company_id": self.company_id.id,
+            "picking_type_id": self.picking_type_id.id,
+            "state": "draft",
+            "additional": additional,
+        }

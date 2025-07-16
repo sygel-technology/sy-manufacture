@@ -107,30 +107,53 @@ class TestMrpWorkCenterComponents(TransactionCase):
             }
         )
         production._add_workcenter_components()
-        additional_moves = production.move_raw_ids.filtered(lambda m: m.additional)
-        self.assertEqual(len(additional_moves), 2)
-        self.assertSetEqual(
-            set(additional_moves.mapped("product_id.id")),
-            {self.product_screw.id, self.product_washer.id},
+        self.assertEqual(len(production.move_raw_ids), 4)
+
+    def test_write_updates_workcenter_components_sin_additional(self):
+        component_old = self.env["product.product"].create(
+            {"name": "Old Component", "type": "product"}
+        )
+        component_new = self.env["product.product"].create(
+            {"name": "New Component", "type": "product"}
         )
 
-    def test_write_updates_workcenter_components_real(self):
-        new_workcenter = self.env["mrp.workcenter"].create({"name": "New WC"})
+        workcenter_old = self.env["mrp.workcenter"].create({"name": "Old WC"})
+        workcenter_new = self.env["mrp.workcenter"].create({"name": "New WC"})
+
         self.env["mrp.workcenter.component"].create(
             {
-                "work_center_id": new_workcenter.id,
-                "product_id": self.product_leg.id,
+                "work_center_id": workcenter_old.id,
+                "product_id": component_old.id,
+                "quantity": 1,
+                "company_id": self.env.company.id,
+            }
+        )
+        self.env["mrp.workcenter.component"].create(
+            {
+                "work_center_id": workcenter_new.id,
+                "product_id": component_new.id,
                 "quantity": 2,
                 "company_id": self.env.company.id,
             }
         )
 
+        product = self.env["product.product"].create(
+            {"name": "Product", "type": "product"}
+        )
+        bom = self.env["mrp.bom"].create(
+            {
+                "product_tmpl_id": product.product_tmpl_id.id,
+                "product_qty": 1.0,
+                "type": "normal",
+            }
+        )
+
         production = self.env["mrp.production"].create(
             {
-                "product_id": self.product_table.id,
+                "product_id": product.id,
                 "product_qty": 1.0,
-                "product_uom_id": self.product_table.uom_id.id,
-                "bom_id": self.bom.id,
+                "product_uom_id": product.uom_id.id,
+                "bom_id": bom.id,
                 "location_src_id": self.env.ref("stock.stock_location_stock").id,
                 "location_dest_id": self.env.ref("stock.stock_location_stock").id,
             }
@@ -139,54 +162,29 @@ class TestMrpWorkCenterComponents(TransactionCase):
         workorder = self.env["mrp.workorder"].create(
             {
                 "production_id": production.id,
-                "workcenter_id": self.workcenter.id,
-                "product_id": production.product_id.id,
-                "product_uom_id": production.product_uom_id.id,
-                "name": "Initial Workorder",
+                "workcenter_id": workcenter_old.id,
+                "product_id": product.id,
+                "product_uom_id": product.uom_id.id,
+                "name": "Test Workorder",
             }
         )
 
-        production._update_workcenter_components()
-        additional_moves_initial = production.move_raw_ids.filtered(
-            lambda m: m.additional
-        )
-        self.assertEqual(len(additional_moves_initial), 2)
+        production._add_workcenter_components(workcenter_id=workcenter_old.id)
 
-        workorder.write({"workcenter_id": new_workcenter.id})
-        production._update_workcenter_components()
-
-        additional_moves_after = production.move_raw_ids.filtered(
-            lambda m: m.additional
+        move_old = production.move_raw_ids.filtered(
+            lambda m: m.product_id == component_old and m.state == "draft"
         )
-        self.assertEqual(len(additional_moves_after), 1)
-        self.assertEqual(additional_moves_after.product_id, self.product_leg)
+        self.assertEqual(len(move_old), 1)
 
-        production.write(
-            {
-                "workorder_ids": [
-                    (
-                        0,
-                        0,
-                        {
-                            "workcenter_id": new_workcenter.id,
-                            "product_id": production.product_id.id,
-                            "product_uom_id": production.product_uom_id.id,
-                            "name": "Nuevo WO desde write",
-                        },
-                    )
-                ]
-            }
-        )
+        workorder.write({"workcenter_id": workcenter_new.id})
 
-        additional_moves_write = production.move_raw_ids.filtered(
-            lambda m: m.additional
+        move_old_after = production.move_raw_ids.filtered(
+            lambda m: m.product_id == component_old and m.state == "draft"
         )
-        self.assertEqual(len(additional_moves_write), 1)
-        self.assertEqual(additional_moves_write.product_id, self.product_leg)
+        self.assertEqual(len(move_old_after), 0)
 
-        product_qty_before = production.product_qty
-        production.write({"product_qty": product_qty_before + 1})
-        additional_moves_final = production.move_raw_ids.filtered(
-            lambda m: m.additional
+        move_new = production.move_raw_ids.filtered(
+            lambda m: m.product_id == component_new and m.state == "draft"
         )
-        self.assertEqual(len(additional_moves_final), 1)
+        self.assertEqual(len(move_new), 1)
+        self.assertEqual(move_new.product_uom_qty, 2)

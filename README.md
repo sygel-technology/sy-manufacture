@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[mrp_work_center_component](mrp_work_center_component/) | 17.0.1.0.0 |  | Add a Components tab in Work Center form to define needed products and quantities.
 [quality_control_wait_approval](quality_control_wait_approval/) | 17.0.1.0.0 |  | Always pass through the 'Waiting supervisor approval' in Inspections
 
 [//]: # (end addons)

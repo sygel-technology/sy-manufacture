@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_mrp_workcenter_form_inherit_components" model="ir.ui.view">
+        <field name="name">mrp.workcenter.form.inherit.components</field>
+        <field name="model">mrp.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_workcenter_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Components">
+                    <field name="component_line_ids">
+                        <tree editable="bottom">
+                            <field name="product_id" />
+                            <field name="quantity" />
+                            <field name="product_uom_id" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

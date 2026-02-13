@@ -1,3 +1,3 @@
 To install this module, you need to:
 
-#. Nothing special.
+1.  Nothing special.

@@ -1,4 +1,4 @@
-- [Sygel](https://www.sygel.es):
+- \[Sygel\](<https://www.sygel.es>):
   - Valentin Vinagre
   - Manuel Regidor
   - Ángel Rivas

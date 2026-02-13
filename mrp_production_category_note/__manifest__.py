@@ -2,8 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "MRP Production Category Notes",
-    "version": "15.0.1.0.0",
+    "name": "MRP Production Category Note",
+    "version": "18.0.1.0.0",
     "category": "Manufacturing",
     "summary": (
         "This module adds a new field to product categories "

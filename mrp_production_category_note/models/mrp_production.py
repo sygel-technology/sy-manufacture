@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, models
+from odoo.tools import html2plaintext
 
 
 class MrpProduction(models.Model):
@@ -14,7 +15,7 @@ class MrpProduction(models.Model):
             if product_id.exists() and product_id.categ_id:
                 mrp_notes = product_id.categ_id.get_mrp_notes()
                 if mrp_notes:
-                    if vals.get("notes", "") in ["", "<p><br></p>"]:
+                    if not html2plaintext(vals.get("notes", "")):
                         vals["notes"] = mrp_notes
                     else:
                         vals["notes"] = f"{vals.get('notes', '')}\n{mrp_notes}"

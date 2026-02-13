@@ -1,6 +1,6 @@
-=============================
-MRP Production Category Notes
-=============================
+============================
+MRP Production Category Note
+============================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -17,7 +17,7 @@ MRP Production Category Notes
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-sygel--technology%2Fsy--manufacture-lightgray.png?logo=github
-    :target: https://github.com/sygel-technology/sy-manufacture/tree/18.0/mrp_production_category_notes
+    :target: https://github.com/sygel-technology/sy-manufacture/tree/18.0/mrp_production_category_note
     :alt: sygel-technology/sy-manufacture
 
 |badge1| |badge2| |badge3|
@@ -42,21 +42,21 @@ Usage
 
 To use this module, you need to:
 
-#. Go to Inventory / Configuration / Products / Products categories /
-Category - In this menu, you will find the "Manufacturing order notes"
-that allows you to add HTML notes that will be included in manufacturing
-orders related to products in this category when the manufacturing order
-is created.
+1. Go to Inventory / Configuration / Products / Products categories /
+   Category - In this menu, you will find the "Manufacturing order
+   notes" that allows you to add HTML notes that will be included in
+   manufacturing orders related to products in this category when the
+   manufacturing order is created.
 
-#. To verify that the content appears in the Manufacturing Order: - Go
-to Manufacturing / Operations / Manufacturing Orders. - You will find
-the "Notes" field under the "Notes" tab, where the HTML content from the
-product category’s "Manufacturing order notes" will be displayed.
+2. To verify that the content appears in the Manufacturing Order: - Go
+   to Manufacturing / Operations / Manufacturing Orders. - You will find
+   the "Notes" field under the "Notes" tab, where the HTML content from
+   the product category’s "Manufacturing order notes" will be displayed.
 
-#. How it works: - The module first checks if there are notes in the
-product category. If none are found, it will look for notes in the
-parent category and continue upwards in the hierarchy until it finds
-notes or reaches the top.
+3. How it works: - The module first checks if there are notes in the
+   product category. If none are found, it will look for notes in the
+   parent category and continue upwards in the hierarchy until it finds
+   notes or reaches the top.
 
 Bug Tracker
 ===========
@@ -64,7 +64,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/sygel-technology/sy-manufacture/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/sygel-technology/sy-manufacture/issues/new?body=module:%20mrp_production_category_notes%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/sygel-technology/sy-manufacture/issues/new?body=module:%20mrp_production_category_note%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -79,7 +79,7 @@ Authors
 Contributors
 ------------
 
--  [Sygel](https://www.sygel.es):
+-  `Sygel <https://www.sygel.es>`__:
 
    -  Valentin Vinagre
    -  Manuel Regidor
@@ -88,6 +88,6 @@ Contributors
 Maintainers
 -----------
 
-This module is part of the `sygel-technology/sy-manufacture <https://github.com/sygel-technology/sy-manufacture/tree/18.0/mrp_production_category_notes>`_ project on GitHub.
+This module is part of the `sygel-technology/sy-manufacture <https://github.com/sygel-technology/sy-manufacture/tree/18.0/mrp_production_category_note>`_ project on GitHub.
 
 You are welcome to contribute.

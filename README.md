@@ -16,6 +16,13 @@ Odoo Manufacturing
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[mrp_production_category_note](mrp_production_category_note/) | 18.0.1.0.0 |  | This module adds a new field to product categories that allows adding notes to mrp orders.
+
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->

@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-sygel-technology-sy-manufacture"
+version = "18.0.20260217.0"
+dependencies = [
+    "odoo-addon-mrp_production_category_note==18.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 18.0",
+]

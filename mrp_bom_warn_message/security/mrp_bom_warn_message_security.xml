@@ -2,7 +2,6 @@
 <!-- Copyright 2023 Alberto Martínez <alberto.martinez@sygel.es>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record id="group_warning_mrp_bom" model="res.groups">
         <field name="name">A warning can be set on a MRP BOM (MRP)</field>
         <field name="category_id" ref="base.module_category_hidden" />
@@ -11,5 +10,4 @@
             eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
         />
     </record>
-
 </odoo>

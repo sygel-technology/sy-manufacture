@@ -2,7 +2,6 @@
 <!-- Copyright 2023 Alberto Martínez <alberto.martinez@sygel.es>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record id="mrp_bom_form_view_warn_inherit" model="ir.ui.view">
         <field name="name">mrp.bom.form.warn.inherit</field>
         <field name="model">mrp.bom</field>

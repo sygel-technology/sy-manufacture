@@ -1,0 +1,1 @@
+- This module partially replaces old v15 OCA mrp_progress_button. Odoo now natively has the progress button; however, that module also created the reset to confirmed button, which is not supported natively by Odoo. 

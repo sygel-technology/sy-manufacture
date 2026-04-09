@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-sygel-technology-sy-manufacture"
-version = "18.0.20260217.0"
+version = "18.0.20260409.0"
 dependencies = [
     "odoo-addon-mrp_production_category_note==18.0.*",
+    "odoo-addon-sy_mrp_reset_to_confirmed_button==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",

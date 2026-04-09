@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [mrp_production_category_note](mrp_production_category_note/) | 18.0.1.0.0 |  | This module adds a new field to product categories that allows adding notes to mrp orders.
+[sy_mrp_reset_to_confirmed_button](sy_mrp_reset_to_confirmed_button/) | 18.0.1.0.0 |  | Adds a button in MRP Orders to reset status to confirmed
 
 [//]: # (end addons)
 
